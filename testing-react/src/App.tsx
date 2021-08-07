@@ -4,8 +4,8 @@ import './App.css';
 
 import Button from './components/button/button';
 import Input from './components/input/input';
-
-import { myRequest } from './http';
+import Posts from './components/posts/posts';
+import AppContextProvider from './store/AppContext';
 
 interface Post {
   userId: number
@@ -16,26 +16,13 @@ interface Post {
 
 function App() {
 
-  const [post, setPost] = useState<Post>();
-
-  useEffect(() => {
-    myRequest.then(data => {
-      console.log(data)
-      setPost(data)
-    });
-  }, []);
-
   return (
-    <div className="App">
+    <AppContextProvider>
         <Button text='Click me' />
         <Input />
+        <Posts />
         
-        {post && (
-          <div data-testid="myPost">
-            {post.body}
-          </div>
-        )}
-    </div>
+    </AppContextProvider>
   );
 }
 

@@ -2,6 +2,7 @@
 import {render, fireEvent} from '@testing-library/react';
 import Button from './button';
 
+
 it('testing button render', () => {
     const {queryByTestId} = render( <Button text="Click me"/>);
     const myButton = queryByTestId('button');

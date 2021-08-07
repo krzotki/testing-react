@@ -5,14 +5,14 @@ import App from './App';
 jest.mock('./http.ts');
 
 describe("<App />", () => {
-  it('renders one post', async () => {
+  it('renders all posts', async () => {
     const {getByTestId} = render(<App />);
   
     await waitFor(() => {
       
-      const post = getByTestId('myPost');
+      const posts = getByTestId('allPosts');
   
-      expect(post).toBeTruthy();
+      expect(posts.childElementCount).toBeGreaterThan(0);
     });
   
   });

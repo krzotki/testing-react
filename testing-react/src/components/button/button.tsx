@@ -1,5 +1,6 @@
 
 import React, {useState} from 'react';
+import classes from './button.module.css'
 
 interface Props {
     text: string
@@ -13,7 +14,7 @@ const Button: React.FC<Props> = (props) => {
     const [buttonText, setButtonText] = useState<string>(props.text);
 
     return (
-        <button data-testid="button" onClick={() => clickHandler()}>
+        <button className={classes.button} data-testid="button" onClick={() => clickHandler()}>
             {buttonText}
         </button>
     );
