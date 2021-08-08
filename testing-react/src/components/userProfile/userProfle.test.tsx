@@ -26,6 +26,7 @@ it("should render profile page", () => {
       </Router>
     )
 
+    
     expect(container).toBeTruthy();
     expect(container.getElementsByTagName('h3')[0]).toBeTruthy();
 });
