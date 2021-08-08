@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,29 +7,41 @@ import Input from './components/input/input';
 import Posts from './components/posts/posts';
 import AppContextProvider from './store/AppContext';
 import styles from './App.module.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-interface Post {
-  userId: number
-  id: number
-  title: string
-  body: string
-}
+import UserProfile from './components/userProfile/userProfile';
 
 function App() {
 
   return (
-    <AppContextProvider>
-      <div className={styles.grid_container || ""}>
-        <div className={styles.header || ""}>
-          <h3>Hello there</h3>
-        </div>
-        <Input />
-        <div className={styles.button}>
-          <Button text='Click me' />
-        </div>
-        <Posts />
-       </div> 
-    </AppContextProvider>
+    <Router>
+      <AppContextProvider>
+        <Switch>
+          <Route path="/" exact>
+            <div className={styles.grid_container || ""}>
+              <div className={styles.header || ""}>
+                <h3>Hello there</h3>
+              </div>
+              <Input />
+              <div className={styles.button}>
+                <Button text='Click me' />
+              </div>
+              <Posts />
+            </div>
+          </Route>
+          <Route path="/user/:id" exact>
+            <UserProfile />
+          </Route>
+
+        </Switch>
+
+      </AppContextProvider>
+    </Router>
   );
 }
 
