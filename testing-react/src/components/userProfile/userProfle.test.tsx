@@ -28,6 +28,9 @@ it("should render profile page", () => {
 
 
 
+
+    
+
     
     
     expect(container).toBeTruthy();
