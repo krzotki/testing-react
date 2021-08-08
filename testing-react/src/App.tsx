@@ -25,7 +25,7 @@ function App() {
           <Route path="/" exact>
             <div className={styles.grid_container || ""}>
               <div className={styles.header || ""}>
-                <h3>Hello there</h3>
+                <h3>Hello there. General Kenobi</h3>
               </div>
               <Input />
               <div className={styles.button}>
