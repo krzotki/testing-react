@@ -29,4 +29,7 @@ it("should render profile page", () => {
     
     expect(container).toBeTruthy();
     expect(container.getElementsByTagName('h3')[0]).toBeTruthy();
+
+
+    
 });
