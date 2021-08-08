@@ -12,8 +12,6 @@ it("should render single post", () => {
         userId: 1
     } }/>);
 
-    expect(container.hasAttribute('data-postid')).toBeTruthy();
-
     const titleHeader = container.getElementsByTagName('h3')[0];
     expect(titleHeader.hasAttribute('data-posttitle')).toBeTruthy();
 

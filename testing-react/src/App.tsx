@@ -6,6 +6,7 @@ import Button from './components/button/button';
 import Input from './components/input/input';
 import Posts from './components/posts/posts';
 import AppContextProvider from './store/AppContext';
+import styles from './App.module.css';
 
 interface Post {
   userId: number
@@ -18,10 +19,16 @@ function App() {
 
   return (
     <AppContextProvider>
-        <Button text='Click me' />
+      <div className={styles.grid_container || ""}>
+        <div className={styles.header || ""}>
+          <h3>Hello there</h3>
+        </div>
         <Input />
+        <div className={styles.button}>
+          <Button text='Click me' />
+        </div>
         <Posts />
-        
+       </div> 
     </AppContextProvider>
   );
 }
