@@ -1,4 +1,15 @@
 
 .button {
-    border: solid 1px red;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px rgb(61, 119, 206);
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.25s;
+}
+
+.button:hover {
+    background-color: rgb(61, 119, 206);
+    color: white;
+    transform: scale(1.1);
 }
