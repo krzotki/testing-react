@@ -2,6 +2,7 @@
 import React, {useContext} from 'react';
 
 import {AppContext} from '../../store/AppContext';
+import PostItem from '../postItem/postItem';
 
 const Posts: React.FC = () => {
     const context = useContext(AppContext);
@@ -9,7 +10,7 @@ const Posts: React.FC = () => {
     return(
         <ul data-testid="allPosts">
             {context.posts.map(post => (
-                <li key={post.id}>{post.title}</li>
+                <PostItem key={post.id} post={post}/>
             ))}
         </ul>
     );
